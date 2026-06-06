@@ -1,0 +1,57 @@
+[
+  {
+    "url": "https://efficient.app/",
+    "status": 200,
+    "title": "Efficient App | Business Software Reviews, Comparisons, &amp; Deals",
+    "linkCount": 54,
+    "apiUrlCount": 0,
+    "jsonLdCount": 1,
+    "nextFlightPushCount": 45,
+    "parsedFlightRowCount": 50,
+    "outputDir": "pages/efficient-app"
+  },
+  {
+    "url": "https://efficient.app/about",
+    "status": 200,
+    "title": "About Efficient App Our Team &amp; Review Approach",
+    "linkCount": 36,
+    "apiUrlCount": 0,
+    "jsonLdCount": 0,
+    "nextFlightPushCount": 35,
+    "parsedFlightRowCount": 45,
+    "outputDir": "pages/efficient-app-about"
+  },
+  {
+    "url": "https://efficient.app/alternatives",
+    "status": 200,
+    "title": "Software Alternatives &amp; Competitor Rankings | Efficient App",
+    "linkCount": 49,
+    "apiUrlCount": 0,
+    "jsonLdCount": 0,
+    "nextFlightPushCount": 29,
+    "parsedFlightRowCount": 33,
+    "outputDir": "pages/efficient-app-alternatives"
+  },
+  {
+    "url": "https://efficient.app/apps",
+    "status": 200,
+    "title": "Software Reviews for Business Tools &amp; SaaS | Efficient App",
+    "linkCount": 57,
+    "apiUrlCount": 0,
+    "jsonLdCount": 0,
+    "nextFlightPushCount": 27,
+    "parsedFlightRowCount": 32,
+    "outputDir": "pages/efficient-app-apps"
+  },
+  {
+    "url": "https://efficient.app/apps/copper",
+    "status": 200,
+    "title": "Copper Review 2026: Pros, Cons, Pricing &amp; Verdict | Efficient App",
+    "linkCount": 53,
+    "apiUrlCount": 0,
+    "jsonLdCount": 1,
+    "nextFlightPushCount": 30,
+    "parsedFlightRowCount": 36,
+    "outputDir": "pages/efficient-app-apps-copper"
+  }
+]

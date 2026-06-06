@@ -1,0 +1,109 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://efficient.app/#organization",
+        "name": "Efficient App",
+        "legalName": "Efficient App Inc.",
+        "url": "https://efficient.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://efficient.app/icon.svg"
+        },
+        "sameAs": [
+          "https://www.youtube.com/@efficientapp",
+          "https://www.linkedin.com/company/efficient-app",
+          "https://x.com/efficientapp",
+          "https://www.instagram.com/efficient_app",
+          "https://www.tiktok.com/@efficientapp"
+        ],
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Alex Bass"
+          },
+          {
+            "@type": "Person",
+            "name": "Andra Vomir"
+          }
+        ],
+        "foundingDate": "2023-03-08",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1606 Headway Cir #9015",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "postalCode": "78754",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "url": "https://efficient.app/contact"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://efficient.app/apps/dub-links#article",
+        "headline": "Dub Links Review",
+        "url": "https://efficient.app/apps/dub-links",
+        "mainEntityOfPage": "https://efficient.app/apps/dub-links",
+        "description": "Whether you're looking for a full-fledged affiliate/partnership tracking platform (Dub Partners), or you're just looking for the most modern link shortener on the market, Dub is the answer for both.\nNo other tool on the market comes close to Dub's features. Dub offers real-time link tracking, reliable analytics, and even deep conversion data for marketers (first of its kind - if you’re a fellow marketer, this is drool-worthy, so keep reading).",
+        "datePublished": "2023-05-31T15:35:56-05:00",
+        "dateModified": "2026-05-22T15:29:36-05:00",
+        "image": [
+          "https://assets.efficient.app/262745b6cd4d2a402a45c34bbd747ba7d34775a28a6c6cfe90b47fe879c7dc52.webp"
+        ],
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Alex Bass",
+            "url": "https://efficient.app/team/alex"
+          },
+          {
+            "@type": "Person",
+            "name": "Andra Vomir",
+            "url": "https://efficient.app/team/andra"
+          }
+        ],
+        "articleSection": "URL Shortener",
+        "publisher": {
+          "@id": "https://efficient.app/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Reviews",
+            "item": "https://efficient.app/apps"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "URL Shortener",
+            "item": "https://efficient.app/best/url-shortener"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Dub Links"
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Best URL Shorteners (Bitly vs Short.io vs TinyURL vs Dub)",
+        "description": "This is not another video rehashing the Honey Scam drama!   Instead, we’re going to talk about how creators could have caught on to what was happening a lot sooner, and how your business is still vulnerable to losing affiliate/sponsorship revenue unless you fundamentally change how you share links online.   We cover why every creator needs to use their own short links, the best link shortening tools (TinyURL vs Short.io vs Bitly vs Dub), how to set up your links correctly, and how to monitor your traffic (and what to do when something seems off).   This video is for all creators, big or small, so buckle in, take notes, and learn how you can have full control over your own data.",
+        "thumbnailUrl": "https://img.youtube.com/vi/wBQ4_mSoZzs/hqdefault.jpg",
+        "uploadDate": "2025-04-07T07:00:00-05:00",
+        "duration": "PT13M3S",
+        "embedUrl": "https://www.youtube.com/embed/wBQ4_mSoZzs"
+      }
+    ]
+  }
+]

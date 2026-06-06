@@ -1,0 +1,146 @@
+[
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://efficient.app/#organization",
+        "name": "Efficient App",
+        "legalName": "Efficient App Inc.",
+        "url": "https://efficient.app",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://efficient.app/icon.svg"
+        },
+        "sameAs": [
+          "https://www.youtube.com/@efficientapp",
+          "https://www.linkedin.com/company/efficient-app",
+          "https://x.com/efficientapp",
+          "https://www.instagram.com/efficient_app",
+          "https://www.tiktok.com/@efficientapp"
+        ],
+        "founder": [
+          {
+            "@type": "Person",
+            "name": "Alex Bass"
+          },
+          {
+            "@type": "Person",
+            "name": "Andra Vomir"
+          }
+        ],
+        "foundingDate": "2023-03-08",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1606 Headway Cir #9015",
+          "addressLocality": "Austin",
+          "addressRegion": "TX",
+          "postalCode": "78754",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "url": "https://efficient.app/contact"
+        }
+      },
+      {
+        "@type": "Article",
+        "@id": "https://efficient.app/apps/copper#article",
+        "headline": "Copper Review",
+        "url": "https://efficient.app/apps/copper",
+        "mainEntityOfPage": "https://efficient.app/apps/copper",
+        "description": "If you're using Google Workspace, there's no better CRM on the market than Copper. They've invested immense resources into building the deepest integrations with your Email, Calendar, Files (Drive).\nWhile other CRMs that we love like Folk do integrate with Google Workspace, the degree in which emails are ingested into Copper is at a whole different level. You can technically fully manage your Gmail inbox from right within Copper.\nCopper also has a Chrome Extension that lives in Gmail & Calendar, so you can fully live in Gmail and access Copper without even leaving Gmail if you prefer. It's incredibly powerful.",
+        "datePublished": "2020-07-20T14:53:17-05:00",
+        "dateModified": "2026-05-28T14:30:00-05:00",
+        "image": [
+          "https://assets.efficient.app/Copper-CRM-Pipeline.png"
+        ],
+        "author": [
+          {
+            "@type": "Person",
+            "name": "Alex Bass",
+            "url": "https://efficient.app/team/alex"
+          },
+          {
+            "@type": "Person",
+            "name": "Andra Vomir",
+            "url": "https://efficient.app/team/andra"
+          }
+        ],
+        "articleSection": "CRM",
+        "publisher": {
+          "@id": "https://efficient.app/#organization"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Reviews",
+            "item": "https://efficient.app/apps"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "CRM",
+            "item": "https://efficient.app/best/crm"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Copper"
+          }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Best Small Business CRM?",
+        "description": "LIMITED TIME OFFER 🎁 Get our Copper Crash Course (valued at $1200) for FREE  What is the best CRM for small businesses in 2024? If your team size is between 1–300, this video will help you choose the right CRM for your team. Choosing a CRM software is one of the most important business software decisions, because a CRM should serve as the foundation to your business operators for decades to come.",
+        "thumbnailUrl": "https://img.youtube.com/vi/A6fthJXJX-w/hqdefault.jpg",
+        "uploadDate": "2024-01-10T00:00:00-06:00",
+        "duration": "PT13M56S",
+        "embedUrl": "https://www.youtube.com/embed/A6fthJXJX-w"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does Copper Have Email Automation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Copper has native email automation functionality on their Professional and Business tiers. Here's our full breakdown of their new email automation and lead form functionality.\nJust note that the email will send from your email account, so if you're doing bulk cold emails, you'll want to avoid it in-case of being marked as spam which can destroy your domain and deliverability."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Copper CRM Integrate With My Phone and SMS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Out of the box, no CRM really integrates with iOS and Android SMS and phone calls due to the API and privacy limitations on these phones.\nYou'll definitely want to use a separate VoIP service, like one of the best VoIP solutions we recommend, some of which like Aircall have a native integration with Copper.\nNeeding a VoIP (SMS/telephony integration) is definitely more of a business feature need though, so when looking at smaller team CRM's like folk are rarely going to have a native integration of any kind."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Copper integrate with Superhuman Mail?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, we actually use Copper alongside Superhuman Mail ourselves. Since both Superhuman and Copper are built atop Google Workspace, your emails sent from Superhuman will automatically ingest into Copper, since Superhuman is just a layer atop your Gmail, and emails still show up in your Gmail inbox (which is what Copper looks at when pulling in email activity).\nThe only thing to note here is that Copper does have a Chrome Extension, which allows for Copper to show up in the sidebar of your Gmail, making it quick and easy to add new contacts as people/leads in the CRM, and easily access historical activity and custom fields without leaving Gmail. That is all the extension does though (it's not needed for any of the integration/ingesting of emails). It also works in Superhuman as a sidebar, just a bit less functionality than using it directly in Gmail. Either way, for us, the benefits that come from using Superhuman over Gmail outweigh having full functionality in the Copper sidebar extension.\nIt's tough to say exactly if this is worth it for everyone, so we suggest you just sign up for a free 30–day trial with this Superhuman Mail deal and try it for yourself to see if it's worth the small trade-off."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Should I use multiple CRMs for different business divisions?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "You should only use a single CRM for your entire business, even if you have a lot of complexity. The point of a CRM is to be a single-source-of-truth for your business, so multiple instances will directly result in having more disconnected data and problems.\nIt's best to just make a single CRM work for your team, by using visibility permissions and a structure that scales across the various departments."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
