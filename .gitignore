@@ -1,0 +1,14 @@
+node_modules/
+
+# Generated Playwright output
+playwright/playwright-output/
+playwright/playwright-output-test/
+
+# Generated API output
+api/api-output/
+api/site-json-output/
+api/site-json-output-chrome/
+api/site-json-output-chrome-test/
+
+# Generated captured output
+captured/captured-output/
