@@ -1,0 +1,506 @@
+[
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/courses/check-access?courseId=2",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/courses/check-access?courseId=1",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/deals?_rsc=5CB68i4pnAekjehf",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/compare?_rsc=5CB68i4pnAekjehf",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/stacks?_rsc=5CB68i4pnAekjehf",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/nav",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best/ai?ref=header&_rsc=Sdev7PUlRw12F58X",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/?_rsc=Sdev7PUlRw12F58X",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/compare?_rsc=Sdev7PUlRw12F58X",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best?_rsc=Sdev7PUlRw12F58X",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/compare?_rsc=6Q1v7HcIw7d_mkmQ",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/stacks?_rsc=Sdev7PUlRw12F58X",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/compare?_rsc=5oha_MqiFWlStH9F",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/deals?_rsc=Sdev7PUlRw12F58X",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/blog?_rsc=Sdev7PUlRw12F58X",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/compare?_rsc=fgCLUEwJ1_IJs8Rg",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/stacks?_rsc=5oha_MqiFWlStH9F",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/compare?_rsc=M6_dQoFK5peQ0bQz",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/compare?_rsc=G2NRmayuj9rbvuWV",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/stacks?_rsc=HxFijot6xqcYhCXE",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/deals?_rsc=5oha_MqiFWlStH9F",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/stacks?_rsc=iBz-78tY81bCx8-3",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best?_rsc=5oha_MqiFWlStH9F",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/deals?_rsc=kWEXcb5LUDBiHL7N",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/deals?_rsc=Iu0EWJsExXp211WP",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best?_rsc=Rs7e6wUATKFv-7in",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best?_rsc=WemqaIFRcw6-QzHD",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best/ai?ref=header&_rsc=5oha_MqiFWlStH9F",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best/ai?ref=header&_rsc=zxRahq66d7yEJM8s",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best/ai?ref=header&_rsc=Z-rKNUCGk03HinGQ",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/blog?_rsc=5oha_MqiFWlStH9F",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/blog?_rsc=9wY4dX7SF5n-S9sv",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/blog?_rsc=hYcTfqGGb5cCH5Nf",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/?_rsc=5oha_MqiFWlStH9F",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/best/ai?_rsc=Sdev7PUlRw12F58X",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/?_rsc=rs9tpVrsD4QgT_se",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/api/payload",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/about",
+    "responseUrl": "https://efficient.app/api/nav",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/api/nav",
+    "status": 200,
+    "contentType": "application/json",
+    "bodyType": "json"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/deals?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/stacks?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/best?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/compare?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/alternatives?_rsc=QcLHsk76HljxO-uq",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/best/ai?ref=header&_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/alternatives/notion-mail?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/alternatives/arc-browser?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/alternatives/gmail?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/compare?_rsc=NakLGSwCeXumetYR",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/compare?_rsc=lIwq09GO5hodJ0L_",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  },
+  {
+    "pageUrl": "https://efficient.app/alternatives",
+    "responseUrl": "https://efficient.app/blog?_rsc=HiIX4oO9lWZ63wdp",
+    "status": 200,
+    "contentType": "text/x-component",
+    "bodyType": "text"
+  }
+]

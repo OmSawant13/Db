@@ -1,0 +1,35 @@
+[
+  {
+    "url": "https://efficient.app/",
+    "status": 200,
+    "title": "Efficient App | Business Software Reviews, Comparisons, & Deals",
+    "linkCount": 57,
+    "jsonResponseCount": 26,
+    "jsonLdCount": 1,
+    "nextFlightPushCount": 45,
+    "parsedFlightRowCount": 50,
+    "outputDir": "pages/efficient-app"
+  },
+  {
+    "url": "https://efficient.app/about",
+    "status": 200,
+    "title": "About Efficient App Our Team & Review Approach",
+    "linkCount": 36,
+    "jsonResponseCount": 32,
+    "jsonLdCount": 0,
+    "nextFlightPushCount": 35,
+    "parsedFlightRowCount": 45,
+    "outputDir": "pages/efficient-app-about"
+  },
+  {
+    "url": "https://efficient.app/alternatives",
+    "status": 200,
+    "title": "Software Alternatives & Competitor Rankings | Efficient App",
+    "linkCount": 49,
+    "jsonResponseCount": 14,
+    "jsonLdCount": 0,
+    "nextFlightPushCount": 29,
+    "parsedFlightRowCount": 33,
+    "outputDir": "pages/efficient-app-alternatives"
+  }
+]
