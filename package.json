@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "crawl": "node scripts/crawl.mjs",
+    "normalize": "node scripts/normalize.mjs",
     "start": "node scripts/server.mjs"
   },
   "dependencies": {

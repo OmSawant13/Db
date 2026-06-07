@@ -67,3 +67,41 @@ http://localhost:3000
 - Next.js `self.__next_f.push(...)` payloads
 - Parsed Next.js flight JSON rows
 - Captured network JSON/RSC responses
+
+## Normalize Business Data
+
+After crawling, extract formatted business entities:
+
+```bash
+npm run normalize
+```
+
+Normalized tables:
+
+```text
+assets
+apps
+deals
+categories
+stacks
+stack_apps
+comparisons
+comparison_apps
+courses
+page_sections
+```
+
+Inspect counts:
+
+```text
+http://localhost:3000/api/entities
+```
+
+Inspect records:
+
+```text
+http://localhost:3000/api/entities/apps
+http://localhost:3000/api/entities/deals
+http://localhost:3000/api/entities/categories
+http://localhost:3000/api/entities/comparisons
+```

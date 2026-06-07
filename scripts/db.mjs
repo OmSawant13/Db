@@ -42,6 +42,131 @@ export function openDb() {
     CREATE INDEX IF NOT EXISTS idx_links_page_id ON links(page_id);
     CREATE INDEX IF NOT EXISTS idx_json_blocks_page_id ON json_blocks(page_id);
     CREATE INDEX IF NOT EXISTS idx_json_blocks_kind ON json_blocks(kind);
+
+    CREATE TABLE IF NOT EXISTS assets (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER,
+      url TEXT NOT NULL UNIQUE,
+      filename TEXT,
+      alt TEXT,
+      coverage_percent REAL,
+      x_offset_percent REAL,
+      y_offset_percent REAL,
+      raw_json TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS apps (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      slug TEXT,
+      name TEXT NOT NULL,
+      description TEXT,
+      icon_asset_id INTEGER,
+      glyph_asset_id INTEGER,
+      homepage_asset_id INTEGER,
+      brand_background_color TEXT,
+      brand_primary_color TEXT,
+      brand_secondary_color TEXT,
+      brand_tertiary_color TEXT,
+      raw_json TEXT,
+      FOREIGN KEY (icon_asset_id) REFERENCES assets(id),
+      FOREIGN KEY (glyph_asset_id) REFERENCES assets(id),
+      FOREIGN KEY (homepage_asset_id) REFERENCES assets(id)
+    );
+
+    CREATE TABLE IF NOT EXISTS deals (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      app_source_id INTEGER,
+      app_id INTEGER,
+      name TEXT,
+      display_name TEXT,
+      unit_type TEXT,
+      quantity REAL,
+      duration_days INTEGER,
+      value REAL,
+      promo_code TEXT,
+      terms TEXT,
+      claimed INTEGER,
+      eligibility TEXT,
+      is_featured INTEGER,
+      is_reward INTEGER,
+      start_date TEXT,
+      end_date TEXT,
+      raw_json TEXT,
+      FOREIGN KEY (app_id) REFERENCES apps(id)
+    );
+
+    CREATE TABLE IF NOT EXISTS categories (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      name TEXT NOT NULL,
+      slug TEXT,
+      icon TEXT,
+      featured_order INTEGER,
+      is_broad_category INTEGER,
+      raw_json TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS stacks (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      slug TEXT,
+      name TEXT NOT NULL,
+      description TEXT,
+      icon TEXT,
+      summary_json TEXT,
+      raw_json TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS stack_apps (
+      stack_id INTEGER NOT NULL,
+      app_id INTEGER NOT NULL,
+      PRIMARY KEY (stack_id, app_id),
+      FOREIGN KEY (stack_id) REFERENCES stacks(id) ON DELETE CASCADE,
+      FOREIGN KEY (app_id) REFERENCES apps(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS comparisons (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      name TEXT NOT NULL,
+      tldr_json TEXT,
+      raw_json TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS comparison_apps (
+      comparison_id INTEGER NOT NULL,
+      app_id INTEGER NOT NULL,
+      PRIMARY KEY (comparison_id, app_id),
+      FOREIGN KEY (comparison_id) REFERENCES comparisons(id) ON DELETE CASCADE,
+      FOREIGN KEY (app_id) REFERENCES apps(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS courses (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      app_id INTEGER,
+      name TEXT NOT NULL,
+      duration TEXT,
+      module_count INTEGER,
+      raw_json TEXT,
+      FOREIGN KEY (app_id) REFERENCES apps(id)
+    );
+
+    CREATE TABLE IF NOT EXISTS page_sections (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      page_id INTEGER NOT NULL,
+      section_order INTEGER NOT NULL,
+      heading TEXT,
+      body TEXT,
+      raw_text TEXT,
+      FOREIGN KEY (page_id) REFERENCES pages(id) ON DELETE CASCADE
+    );
+
+    CREATE INDEX IF NOT EXISTS idx_apps_slug ON apps(slug);
+    CREATE INDEX IF NOT EXISTS idx_deals_app_id ON deals(app_id);
+    CREATE INDEX IF NOT EXISTS idx_page_sections_page_id ON page_sections(page_id);
   `);
   return db;
 }

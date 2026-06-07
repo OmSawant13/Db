@@ -88,6 +88,24 @@ const server = http.createServer(async (req, res) => {
     return json(res, { page, links, jsonBlocks });
   }
 
+  if (url.pathname === "/api/entities") {
+    const tables = ["assets", "apps", "deals", "categories", "stacks", "comparisons", "courses", "page_sections"];
+    const counts = Object.fromEntries(tables.map((table) => [
+      table,
+      db.prepare(`SELECT count(*) AS count FROM ${table}`).get().count,
+    ]));
+    return json(res, counts);
+  }
+
+  if (url.pathname.startsWith("/api/entities/")) {
+    const table = url.pathname.split("/").pop();
+    const allowed = new Set(["assets", "apps", "deals", "categories", "stacks", "comparisons", "courses", "page_sections"]);
+    if (!allowed.has(table)) return notFound(res);
+
+    const limit = Math.min(Number(url.searchParams.get("limit") || 200), 1000);
+    return json(res, db.prepare(`SELECT * FROM ${table} ORDER BY id LIMIT ?`).all(limit));
+  }
+
   if (url.pathname === "/_clone") {
     const body = await readFile("public/clone-index.html");
     res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
