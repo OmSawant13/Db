@@ -1,19 +1,13 @@
 {
-  "name": "efficient",
+  "name": "efficient-sqlite-viewer",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "playwright": "node playwright/playwright-efficient-crawler.mjs",
-    "api:crawl": "node api/crawl-efficient-json.mjs",
-    "api:fetch": "node api/fetch-api-json.mjs",
-    "captured:convert": "node captured/convert-captured-response.mjs"
+    "crawl": "node scripts/crawl.mjs",
+    "start": "node scripts/server.mjs"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "playwright": "^1.60.0"
+    "playwright": "^1.56.1"
   }
 }
