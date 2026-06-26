@@ -105,3 +105,4 @@ http://localhost:3000/api/entities/deals
 http://localhost:3000/api/entities/categories
 http://localhost:3000/api/entities/comparisons
 ```
+# Db
