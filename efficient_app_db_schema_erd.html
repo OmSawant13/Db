@@ -1,0 +1,229 @@
+
+<style>
+#erd svg .divider path { stroke-opacity: 0.5; }
+#erd svg .row-rect-odd path,
+#erd svg .row-rect-odd rect,
+#erd svg .row-rect-even path,
+#erd svg .row-rect-even rect { stroke: none !important; }
+</style>
+<div id="erd" style="padding: 8px 0"></div>
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Anthropic Sans", sans-serif',
+  themeVariables: {
+    darkMode: dark,
+    fontSize: '13px',
+    fontFamily: '"Anthropic Sans", sans-serif',
+    lineColor: dark ? '#9c9a92' : '#73726c',
+    textColor: dark ? '#c2c0b6' : '#3d3d3a',
+    primaryColor: dark ? '#3C3489' : '#EEEDFE',
+    primaryTextColor: dark ? '#c2c0b6' : '#3d3d3a',
+    primaryBorderColor: dark ? '#534AB7' : '#AFA9EC',
+    secondaryColor: dark ? '#085041' : '#E1F5EE',
+    tertiaryColor: dark ? '#3C3489' : '#EEEDFE',
+  },
+});
+
+const diagram = `erDiagram
+  APPS ||--o{ APP_FEATURES : has
+  APPS ||--o{ APP_PRICING_TIERS : has
+  APPS ||--o{ APP_LIMITATIONS : has
+  APPS ||--o{ APP_CATEGORIES : belongs_to
+  APPS ||--o{ DEALS : has
+  APPS ||--o{ COMPARISONS : compared_in
+  APPS ||--o{ STACKS_APPS : included_in
+  APPS ||--o{ ALTERNATIVES : alternative_for
+  APPS ||--o{ COURSE_TOOLS : taught_in
+  STACKS ||--o{ STACKS_APPS : contains
+  CATEGORIES ||--o{ APP_CATEGORIES : groups
+  USERS ||--o{ SUBSCRIBERS : subscribed
+  USERS ||--o{ USER_STACKS : owns
+
+  APPS {
+    uuid id PK
+    string slug UK
+    string name
+    string tagline
+    string description
+    string logo_url
+    string website_url
+    string og_image_url
+    string rating_label
+    bool is_featured
+    bool is_best
+    int view_count
+    timestamp published_at
+    timestamp created_at
+    timestamp updated_at
+  }
+
+  APP_FEATURES {
+    uuid id PK
+    uuid app_id FK
+    string title
+    string description
+    int sort_order
+  }
+
+  APP_PRICING_TIERS {
+    uuid id PK
+    uuid app_id FK
+    string tier_name
+    string price
+    string billing_cycle
+    string description
+    bool is_free_tier
+    int sort_order
+  }
+
+  APP_LIMITATIONS {
+    uuid id PK
+    uuid app_id FK
+    string description
+    int sort_order
+  }
+
+  CATEGORIES {
+    uuid id PK
+    string slug UK
+    string name
+    string description
+    string icon_url
+    int sort_order
+  }
+
+  APP_CATEGORIES {
+    uuid id PK
+    uuid app_id FK
+    uuid category_id FK
+    bool is_primary
+  }
+
+  DEALS {
+    uuid id PK
+    uuid app_id FK
+    string title
+    string description
+    string discount_label
+    string deal_url
+    bool is_exclusive
+    bool is_active
+    timestamp expires_at
+    timestamp created_at
+  }
+
+  COMPARISONS {
+    uuid id PK
+    uuid app_a_id FK
+    uuid app_b_id FK
+    string slug UK
+    string summary
+    string winner_label
+    int view_count
+    timestamp published_at
+  }
+
+  ALTERNATIVES {
+    uuid id PK
+    uuid source_app_id FK
+    uuid alternative_app_id FK
+    string reason
+    int sort_order
+  }
+
+  STACKS {
+    uuid id PK
+    string slug UK
+    string name
+    string description
+    string team_type
+    bool is_featured
+    timestamp published_at
+  }
+
+  STACKS_APPS {
+    uuid id PK
+    uuid stack_id FK
+    uuid app_id FK
+    string role_label
+    int sort_order
+  }
+
+  COURSES {
+    uuid id PK
+    string slug UK
+    string title
+    string description
+    string price
+    string thumbnail_url
+    string video_url
+    bool has_subtitles
+    string access_type
+    bool lifetime_access
+    timestamp published_at
+  }
+
+  COURSE_TOOLS {
+    uuid id PK
+    uuid course_id FK
+    uuid app_id FK
+  }
+
+  USERS {
+    uuid id PK
+    string email UK
+    string name
+    string avatar_url
+    string role
+    timestamp created_at
+  }
+
+  SUBSCRIBERS {
+    uuid id PK
+    uuid user_id FK
+    string email UK
+    bool is_confirmed
+    timestamp subscribed_at
+  }
+
+  USER_STACKS {
+    uuid id PK
+    uuid user_id FK
+    string name
+    jsonb apps_list
+    timestamp created_at
+  }
+`;
+
+const { svg } = await mermaid.render('erd-svg', diagram);
+document.getElementById('erd').innerHTML = svg;
+
+document.querySelectorAll('#erd svg .node').forEach(node => {
+  const firstPath = node.querySelector('path[d]');
+  if (!firstPath) return;
+  const d = firstPath.getAttribute('d');
+  const nums = d.match(/-?[\d.]+/g)?.map(Number);
+  if (!nums || nums.length < 8) return;
+  const xs = [nums[0], nums[2], nums[4], nums[6]];
+  const ys = [nums[1], nums[3], nums[5], nums[7]];
+  const x = Math.min(...xs), y = Math.min(...ys);
+  const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x); rect.setAttribute('y', y);
+  rect.setAttribute('width', w); rect.setAttribute('height', h);
+  rect.setAttribute('rx', '8');
+  for (const a of ['fill', 'stroke', 'stroke-width', 'class', 'style']) {
+    if (firstPath.hasAttribute(a)) rect.setAttribute(a, firstPath.getAttribute(a));
+  }
+  firstPath.replaceWith(rect);
+});
+
+document.querySelectorAll('#erd svg .row-rect-odd path, #erd svg .row-rect-even path').forEach(p => {
+  p.setAttribute('stroke', 'none');
+});
+</script>

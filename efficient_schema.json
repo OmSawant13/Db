@@ -1,0 +1,169 @@
+{
+  "schemaName": "efficient.app — EXACT comparison schema",
+  "note": "Reverse-engineered from the real RSC payload of /compare/superhuman-vs-gmail. Every field name below was read verbatim from the payload. The 'ssg*' names in the payload (ssgComparison, ssgComparisonApps) are just the page query's alias for Static-Site-Generation; the underlying Payload collections are 'comparisons' and 'apps'.",
+
+  "howAComparisonPageIsBuilt": [
+    "1. Page query loads ONE `comparisons` row (the matchup) -> gives name, tldr, and the 2 apps via `comparisonApps`.",
+    "2. For each app it pulls that app's `categoryRecommendations` (the app's standing inside a category).",
+    "3. Each categoryRecommendation carries: recommendation(enum) + classification(enum) + bestFor + summary(Lexical) + the `category` (which lists its `categoryCriteria`) + a `review`.",
+    "4. The `review` holds `reviewCategoryCriterionRating[]` = the actual per-criterion 1-7 scores (the 7/7, 3/7 bars).",
+    "5. The page renders app A's ratings next to app B's ratings, criterion by criterion. The comparison row itself stores NO scores."
+  ],
+
+  "exactNestedShape (as it arrives in the payload)": {
+    "comparison (ssgComparison)": {
+      "id": 76,
+      "name": "Superhuman Mail vs Gmail",
+      "lastPublishedAt": "ISO date",
+      "lastIsrDate": "ISO date",
+      "featuredOrder": 1,
+      "tldr": "Lexical rich-text JSON",
+      "comparisonApps": { "docs": [ { "id": 151, "app": "<app ref>", "order": 1 } ] }
+    },
+    "app (ssgComparisonApps[])": {
+      "id": 139,
+      "slug": "superhuman",
+      "name": "Superhuman Mail",
+      "partnershipTier": "gold",
+      "affiliateLink": { "id": 1073, "epcValue": 2500, "passReferrerUrl": true, "shortLink": "https://efficient.link/r/superhuman-mail", "deletedAt": null },
+      "icon": "<asset>", "glyph": "<asset>", "homepageImage": "<asset>",
+      "brandBackgroundColor": "#191919", "brandPrimaryColor": "#282a2c",
+      "categoryRecommendations": { "docs": [ "<categoryRecommendation>" ] }
+    },
+    "categoryRecommendation (categoryRecommendations.docs[])": {
+      "id": 665,
+      "category": "<category>",
+      "recommendation": "top-pick",
+      "classification": "secondary",
+      "bestFor": "Best for high-performers",
+      "summary": "Lexical rich-text JSON",
+      "review": { "docs": [ "<review>" ] }
+    },
+    "category": {
+      "id": 124, "name": "AI Email Assistant", "slug": "ai-email-assistant",
+      "icon": "wand-sparkle", "isFeatured": false,
+      "categoryCriteria": { "docs": [ "<categoryCriterion>" ] }
+    },
+    "categoryCriterion (categoryCriteria.docs[])": {
+      "id": 83,
+      "category": "<category ref>",
+      "criterion": { "id": 4, "name": "Innovation", "icon": "infinity" }
+    },
+    "review (review.docs[])": {
+      "id": 127,
+      "bestFor": "Best overall email client",
+      "reviewCategoryCriterionRating": { "docs": [ "<rating>" ] }
+    },
+    "rating (reviewCategoryCriterionRating.docs[])": {
+      "id": 10,
+      "categoryCriterion": "<categoryCriterion ref>",
+      "isApplicable": true,
+      "rating": 5,
+      "summary": "Lexical rich-text JSON (per-criterion write-up)"
+    }
+  },
+
+  "relationalTables (Payload collections, normalized)": {
+    "assets": {
+      "id": "INTEGER PK",
+      "url": "TEXT UNIQUE NOT NULL",
+      "filename": "TEXT",
+      "alt": "TEXT",
+      "coveragePercent": "REAL",
+      "xOffsetPercent": "REAL",
+      "yOffsetPercent": "REAL",
+      "width": "INTEGER (on screenshots)",
+      "height": "INTEGER (on screenshots)"
+    },
+    "affiliate_links": {
+      "id": "INTEGER PK",
+      "shortLink": "TEXT NOT NULL",
+      "epcValue": "REAL",
+      "passReferrerUrl": "INTEGER (bool)",
+      "deletedAt": "TEXT"
+    },
+    "apps": {
+      "id": "INTEGER PK",
+      "slug": "TEXT UNIQUE NOT NULL",
+      "name": "TEXT NOT NULL",
+      "description": "TEXT",
+      "icon_asset_id": "INTEGER -> assets.id",
+      "glyph_asset_id": "INTEGER -> assets.id",
+      "homepage_asset_id": "INTEGER -> assets.id",
+      "brandBackgroundColor": "TEXT",
+      "brandPrimaryColor": "TEXT",
+      "brandSecondaryColor": "TEXT",
+      "brandTertiaryColor": "TEXT",
+      "partnershipTier": "TEXT (gold | silver | bronze | null)",
+      "affiliateLink_id": "INTEGER -> affiliate_links.id"
+    },
+    "categories": {
+      "id": "INTEGER PK",
+      "slug": "TEXT UNIQUE NOT NULL",
+      "name": "TEXT NOT NULL",
+      "icon": "TEXT",
+      "featuredOrder": "INTEGER",
+      "isBroadCategory": "INTEGER (bool)",
+      "isFeatured": "INTEGER (bool)"
+    },
+    "criteria": {
+      "id": "INTEGER PK",
+      "name": "TEXT NOT NULL (e.g. Innovation, Speed & Productivity)",
+      "icon": "TEXT"
+    },
+    "category_criteria": {
+      "_comment": "Junction: which criteria belong to a category. Order = position in the docs[] array.",
+      "id": "INTEGER PK",
+      "category_id": "INTEGER -> categories.id NOT NULL",
+      "criterion_id": "INTEGER -> criteria.id NOT NULL"
+    },
+    "category_recommendations": {
+      "_comment": "An app's editorial standing inside one category. This is the 'verdict' object.",
+      "id": "INTEGER PK",
+      "app_id": "INTEGER -> apps.id NOT NULL",
+      "category_id": "INTEGER -> categories.id NOT NULL",
+      "recommendation": "TEXT (top-pick | recommended | capable | not-recommended)",
+      "classification": "TEXT (primary | secondary)",
+      "bestFor": "TEXT",
+      "summary": "TEXT (Lexical rich-text JSON)"
+    },
+    "reviews": {
+      "_comment": "The detailed review attached to a category_recommendation; holds the per-criterion ratings.",
+      "id": "INTEGER PK",
+      "category_recommendation_id": "INTEGER -> category_recommendations.id NOT NULL",
+      "bestFor": "TEXT"
+    },
+    "review_category_criterion_ratings": {
+      "_comment": "The actual 1-7 score for ONE criterion within ONE review. These are the bars on the page.",
+      "id": "INTEGER PK",
+      "review_id": "INTEGER -> reviews.id NOT NULL",
+      "category_criterion_id": "INTEGER -> category_criteria.id NOT NULL",
+      "isApplicable": "INTEGER (bool)",
+      "rating": "INTEGER (1-7)",
+      "summary": "TEXT (Lexical rich-text JSON, per-criterion write-up)"
+    },
+    "comparisons": {
+      "id": "INTEGER PK",
+      "name": "TEXT NOT NULL (e.g. 'Superhuman Mail vs Gmail')",
+      "tldr": "TEXT (Lexical rich-text JSON)",
+      "isFeatured": "INTEGER (bool)",
+      "featuredOrder": "INTEGER",
+      "lastPublishedAt": "TEXT",
+      "lastIsrDate": "TEXT"
+    },
+    "comparison_apps": {
+      "_comment": "Junction: the (usually 2) apps in a matchup, with display order.",
+      "id": "INTEGER PK",
+      "comparison_id": "INTEGER -> comparisons.id NOT NULL",
+      "app_id": "INTEGER -> apps.id NOT NULL",
+      "order": "INTEGER"
+    }
+  },
+
+  "keyInsights": [
+    "A comparison does NOT store scores. It only links 2 apps + a tldr. Scores live in review_category_criterion_ratings, reached via each app's category_recommendation -> review.",
+    "Scores are per (app, category, criterion) on a 1-7 scale, not per comparison. So the SAME review data powers every matchup that app appears in.",
+    "'Relevant / similar apps' are derived from shared category membership (category.appRecommendations), NOT a manual app-to-app mapping.",
+    "All long text (tldr, summary, per-criterion write-ups) is Lexical rich-text JSON, not plain strings."
+  ]
+}

@@ -164,9 +164,58 @@ export function openDb() {
       FOREIGN KEY (page_id) REFERENCES pages(id) ON DELETE CASCADE
     );
 
+    CREATE TABLE IF NOT EXISTS criteria (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      name TEXT NOT NULL,
+      icon TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS category_criteria (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      category_id INTEGER,
+      criterion_id INTEGER,
+      category_criterion_name TEXT,
+      description TEXT,
+      order_num INTEGER,
+      FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE,
+      FOREIGN KEY (criterion_id) REFERENCES criteria(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS reviews (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      app_id INTEGER,
+      category_id INTEGER,
+      recommendation TEXT,
+      classification TEXT,
+      best_for TEXT,
+      last_published_at TEXT,
+      last_isr_date TEXT,
+      raw_json TEXT,
+      FOREIGN KEY (app_id) REFERENCES apps(id) ON DELETE CASCADE,
+      FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS review_ratings (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      source_id INTEGER UNIQUE,
+      review_id INTEGER,
+      category_criterion_id INTEGER,
+      is_applicable INTEGER,
+      rating INTEGER,
+      FOREIGN KEY (review_id) REFERENCES reviews(id) ON DELETE CASCADE,
+      FOREIGN KEY (category_criterion_id) REFERENCES category_criteria(id) ON DELETE CASCADE
+    );
+
     CREATE INDEX IF NOT EXISTS idx_apps_slug ON apps(slug);
     CREATE INDEX IF NOT EXISTS idx_deals_app_id ON deals(app_id);
     CREATE INDEX IF NOT EXISTS idx_page_sections_page_id ON page_sections(page_id);
+    CREATE INDEX IF NOT EXISTS idx_category_criteria_category_id ON category_criteria(category_id);
+    CREATE INDEX IF NOT EXISTS idx_reviews_app_id ON reviews(app_id);
+    CREATE INDEX IF NOT EXISTS idx_reviews_category_id ON reviews(category_id);
+    CREATE INDEX IF NOT EXISTS idx_review_ratings_review_id ON review_ratings(review_id);
   `);
   return db;
 }
